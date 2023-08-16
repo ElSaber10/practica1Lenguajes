@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.TextFlow?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.HelloController">
+<top>
+<MenuBar fx:id="menubar" BorderPane.alignment="CENTER">
+  <Menu mnemonicParsing="false" text="File">
+    <MenuItem mnemonicParsing="false" text="Close" />
+  </Menu>
+  <Menu mnemonicParsing="false" text="Edit">
+    <MenuItem mnemonicParsing="false" text="Delete" />
+  </Menu>
+  <Menu mnemonicParsing="false" text="Ayuda">
+    <MenuItem mnemonicParsing="false" text="About" />
+  </Menu>
+</MenuBar>
+</top>
+<center>
+<TableView fx:id="tokensTable" prefHeight="550.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+  <columns>
+    <TableColumn fx:id="Col" prefWidth="75.0" sortable="false" text="columna" />
+    <TableColumn fx:id="lineCol" prefWidth="75.0" sortable="false" text="Line" />
+    <TableColumn fx:id="tokenCol" prefWidth="75.0" sortable="false" text="Token" />
+    <TableColumn fx:id="atributoCol" prefWidth="75.0" sortable="false" text="Lexema" />
+  </columns>
+  <columnResizePolicy>
+    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+  </columnResizePolicy>
+  <BorderPane.margin>
+    <Insets bottom="15.0" left="10.0" right="10.0" top="12.0" />
+  </BorderPane.margin>
+</TableView>
+</center>
+<left>
+<VBox prefHeight="451.0" prefWidth="344.0" spacing="10.0" BorderPane.alignment="CENTER">
+  <BorderPane.margin>
+    <Insets bottom="15.0" left="10.0" top="10.0"/>
+  </BorderPane.margin>
+  <Label styleClass="code-label" text="Code:">
+    <graphic>
+      <ColorPicker/>
+    </graphic>
+  </Label>
+  <JFXTextArea fx:id="codeTextArea" prefHeight="377.0" prefWidth="344.0" wrapText="true">
+    <VBox.margin>
+      <Insets/>
+    </VBox.margin>
+  </JFXTextArea>
+  <TextFlow fx:id="textflow" prefHeight="377.0" prefWidth="344.0">
+    <VBox.margin>
+      <Insets/>
+    </VBox.margin>
+  </TextFlow>
+  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="248.0" spacing="15.0">
+    <children>
+      <JFXButton fx:id="btnAnalyze" graphicTextGap="10.0" onAction="#analyze" prefHeight="30.0" prefWidth="90.0" text="Analiza">
+
+      </JFXButton>
+      <JFXButton fx:id="btnClear" onAction="#clearCodeArea" prefHeight="30.0" prefWidth="95.0" text="Limpiar">
+
+      </JFXButton>
+      <JFXButton onAction="#loadFile" text="Abrir Archivo">
+
+      </JFXButton>
+      <JFXButton fx:id="btnGrafic" onAction="#graficar" prefHeight="30.0" prefWidth="95.0" text="Graficar">
+
+      </JFXButton>
+    </children>
+  </HBox>
+</VBox>
+</left>
+
+</BorderPane>

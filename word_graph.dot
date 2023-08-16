@@ -1,0 +1,6 @@
+digraph "wordGraph" {
+"w" -> "h"
+"h" -> "i"
+"i" -> "l"
+"l" -> "e"
+}
